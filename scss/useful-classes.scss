@@ -97,9 +97,9 @@
 }
 
 //roundness
-.round { border-radius: 999px; }
-.rounded { border-radius: $rounded-border-radius; }
-.rectangular { border-radius: 0; }
+.round { border-radius: 999px !important; }
+.rounded { border-radius: $rounded-border-radius !important; }
+.rectangular { border-radius: 0 !important; }
 
 //opacity
 .opacity-0 { opacity: 0 !important;}

@@ -1,7 +1,7 @@
 /*  
 
    _____ _       _                 _  _____ 
-  / ___/| (*)   | |               | |/ ___/  v 4.0.2
+  / ___/| (*)   | |               | |/ ___/  v 4.0.4
  | (___ | |_  __| | ___ ____      | | (___  
   \___ \| | |/ _` |/ _ / __/  _   | |\___ \ 
   ____) | | | (_| |  __\__ \ | |__| |____) |
@@ -9,7 +9,7 @@
                                             
                                             
 This file contains scripts required for the proper functionality and display
-of your Slides Project. It also requires plugins.js and jquery-2.2.4 to run this script properly.
+of your Slides Project. It also requires plugins.js and jquery-3.3.1 to run this script properly.
 
 https://designmodo.com/slides/
 
@@ -39,6 +39,11 @@ window.hideOnScrollSensitivity = 100;
 window.allowParallaxOnMobile = 1;
 
 var $html = $('html');
+
+//On Window load
+$(window).on('load', function(){
+  window.loaded = 1;
+});
 
 //On DOM ready
 $(document).ready(function() { "use strict";
@@ -188,11 +193,11 @@ $(document).ready(function() { "use strict";
       window.progressBar.css('width',progress * 100 + "%");
 
       if (window.loadingProgress == window.images) {
-        window.progressBar.addClass('loaded').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
-          //$(this).remove();
-        });
+        window.progressBar.addClass('loaded');
       }
     }
+
+    updateProgressBar();
   }
  
   //Initiate slide
@@ -207,11 +212,12 @@ $(document).ready(function() { "use strict";
     $('.grid.masonry').masonry('layout');
   });
   
-  //On page load 
-  if (!window.preload) {
+  //On page load
+  if (!window.preload || !window.images || window.loaded) {
     runTheCode();
-  } else {
+  }
 
+  if (!window.loaded) {
     $(window).on('load', function(){
       runTheCode();
     });

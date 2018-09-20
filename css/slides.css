@@ -2,7 +2,7 @@
 /*  
                                            
    _____ _       _              _____  _____ _____ 
-  / ___/| (•)   | |           / ____// ____/ ____/  v 4.0.2
+  / ___/| (•)   | |           / ____// ____/ ____/  v 4.0.4
  | (___ | |_  __| | ___ ____ | |    | (___| (___  
   \___ \| | |/ _` |/ _ / __/ | |     \___ \ ___ \ 
   ____) | | | (_| |  __\__ \ | |____ ____) |___) |
@@ -273,7 +273,7 @@ blockquote.small {
 p.tiny,
 .p.tiny,
 blockquote.tiny {
-  font-size: 16px;
+  font-size: 30px;
   line-height: 1.625;
   margin-bottom: 12px;
   font-weight: 400;
@@ -3366,7 +3366,6 @@ html.mobile .showForMobileInline {
  *                                                                                                  
  *                                                                                                  
  */
-
 .animated [class*="ae-"] {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -5711,7 +5710,7 @@ body {
   fill: #34455D !important;
 }
 
-.social-dribbble {
+.social-dribbble { 
   background: #ea4c89 !important;
   color: #fff !important;
 }
@@ -6013,10 +6012,6 @@ body {
 }
 
 @media (max-width: 1239px) {
-  .grid:not(.later) > [class*='col-']:not([class*='col-tablet-']):not([class*='col-phablet-']):not([class*='col-phone-']) {
-    max-width: 100%;
-  }
-
   .grid > .col-desktop-1-1 {
     max-width: 100% !important;
   }
@@ -6069,6 +6064,22 @@ body {
 
   .grid > .col-tablet-3-4 {
     max-width: 75% !important;
+  }
+
+  .grid > .col-tablet-1-5 {
+    max-width: 20% !important;
+  }
+
+  .grid > .col-tablet-2-5 {
+    max-width: 40% !important;
+  }
+
+  .grid > .col-tablet-3-5 {
+    max-width: 60% !important;
+  }
+
+  .grid > .col-tablet-4-5 {
+    max-width: 80% !important;
   }
 }
 /* phablet landscape and ipad portrait and > */
@@ -6159,6 +6170,11 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+}
+.flex.horizontalCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .flex.reverse {
   -ms-flex-wrap: wrap-reverse;
@@ -7009,7 +7025,7 @@ p.remind-43 {
 
 .grid-68 a {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 14px;
   margin-bottom: 14px;
   opacity: 0.9;
   transition: opacity 0.1s ease-in, -webkit-transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
@@ -7918,15 +7934,15 @@ p.remind-43 {
   }
 }
 .round {
-  border-radius: 999px;
+  border-radius: 999px !important;
 }
 
 .rounded {
-  border-radius: 6px;
+  border-radius: 6px !important;
 }
 
 .rectangular {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .opacity-0 {
